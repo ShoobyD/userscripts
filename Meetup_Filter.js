@@ -17,9 +17,12 @@
 	const $body     = $( 'body' );
 	// const JSON_URL  = 'https://www.jsonstore.io/9e682480ba9de202720deaef9aa1e53e3cadc76d296e6ad7101c0b97a2b95015/blacklist';
 	// const JSON_URL  = 'https://api.myjson.com/bins/uves6';
-	const JSON_URL  = 'https://tests.pic-time.com/assets/Meetup_Filter_blacklist.json';
+	// URL of a JSON file shaped like { "blacklist": [ "Group Name", ... ] }
+	const JSON_URL  = '';
 
 	const isBlackList = await ( async () => {
+
+		if ( !JSON_URL ) return () => false;
 
 		let blacklist   = await fetch( JSON_URL )
 			.then( response  => response.text() )
