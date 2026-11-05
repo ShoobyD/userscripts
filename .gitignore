@@ -1,0 +1,13 @@
+# secrets
+ssl/
+
+# IDE
+.idea/
+
+# IIS hosting
+web.config
+aspnet_client/
+
+# private / local-only
+session-export/
+pictime/
